@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-source-maps --no-minify"
+    "build": "parcel build src/index.html --no-source-maps --no-minify",
+    "clasp": "npm install -g @google/clasp  && clasp login --no-localhost",
+    "pushOpen": "clasp push && clasp open",
+    "doIt":"npm run build && node utils.js && npm run pushOpen"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,7 @@
 import { fName,doMath } from "./const"
 import { alertIt } from "./button"
+import { aMessage } from "./message"
+
 
 const moment = require("moment")
 
@@ -14,3 +16,4 @@ function changeIt(){
 
 document.addEventListener("DOMContentLoaded",changeIt)
 document.getElementById("myBtn").addEventListener("click",alertIt)
+document.getElementById("btn-message").addEventListener("click",aMessage)

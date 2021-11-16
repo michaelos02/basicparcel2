@@ -133,6 +133,39 @@ var doMath = function doMath(x) {
 };
 
 exports.doMath = doMath;
+},{}],"zoTV":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.alertIt = void 0;
+
+var alertIt = function alertIt() {
+  alert("It worked!!!");
+};
+
+exports.alertIt = alertIt;
+},{}],"L7ge":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.aMessage = aMessage;
+
+function aMessage() {
+  google.script.run.withSuccessHandler(onSuccess).withFailureHandler(showError).pick('callLibrary');
+}
+
+function onSuccess(theText) {
+  document.getElementById('result').innerHTML = theText;
+}
+
+function showError(err) {
+  console.log(err);
+  document.getElementById('result').innerHTML = "The error is " + err;
+}
 },{}],"a2Bw":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -5812,6 +5845,10 @@ var global = arguments[3];
 
 var _const = require("./const");
 
+var _button = require("./button");
+
+var _message = require("./message");
+
 var moment = require("moment");
 
 var now = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -5824,4 +5861,6 @@ function changeIt() {
 }
 
 document.addEventListener("DOMContentLoaded", changeIt);
-},{"./const":"f08c","moment":"a2Bw"}]},{},["epB2"], null)
+document.getElementById("myBtn").addEventListener("click", _button.alertIt);
+document.getElementById("btn-message").addEventListener("click", _message.aMessage);
+},{"./const":"f08c","./button":"zoTV","./message":"L7ge","moment":"a2Bw"}]},{},["epB2"], null)

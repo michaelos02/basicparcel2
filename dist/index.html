@@ -31,6 +31,13 @@ body{
     <p id="time">Maybe we can get the time</p>
     <div id="time2"></div>
     <button id="myBtn" class="button">Do the alert</button>
+    <h3 style="color: rgb(49, 14, 204)">Testing a Library</h3>
+    <p>Clicking the button below will attempt to make a call to a library function.</p>
+    <p>The results of the call will show below the button.</p>
+    <div class="block" id="button-bar">
+      <button class="action" id="btn-message">Show Message</button>
+    </div>
+    <div id="result">placeholder</div>
     <script>// modules are defined as an array
 // [ module function, map of requires ]
 //
@@ -179,6 +186,26 @@ var alertIt = function alertIt() {
 };
 
 exports.alertIt = alertIt;
+},{}],"L7ge":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.aMessage = aMessage;
+
+function aMessage() {
+  google.script.run.withSuccessHandler(onSuccess).withFailureHandler(showError).pick('callLibrary');
+}
+
+function onSuccess(theText) {
+  document.getElementById('result').innerHTML = theText;
+}
+
+function showError(err) {
+  console.log(err);
+  document.getElementById('result').innerHTML = "The error is " + err;
+}
 },{}],"a2Bw":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -5860,6 +5887,8 @@ var _const = require("./const");
 
 var _button = require("./button");
 
+var _message = require("./message");
+
 var moment = require("moment");
 
 var now = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -5873,6 +5902,7 @@ function changeIt() {
 
 document.addEventListener("DOMContentLoaded", changeIt);
 document.getElementById("myBtn").addEventListener("click", _button.alertIt);
-},{"./const":"f08c","./button":"zoTV","moment":"a2Bw"}]},{},["epB2"], null)</script>
+document.getElementById("btn-message").addEventListener("click", _message.aMessage);
+},{"./const":"f08c","./button":"zoTV","./message":"L7ge","moment":"a2Bw"}]},{},["epB2"], null)</script>
 </body>
 </html>
