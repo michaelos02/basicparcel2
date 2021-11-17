@@ -1,4 +1,6 @@
 const doGet = (e)=>{
-    const html = HtmlService.createTemplateFromFile("index")
+    let htmPage = "index"
+    if(e.parameter.p=="page"){htmPage="page"}
+    const html = HtmlService.createTemplateFromFile(htmPage)
     return html.evaluate()
   }

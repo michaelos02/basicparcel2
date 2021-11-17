@@ -1,0 +1,18 @@
+$myColor: red;
+$myColor2:purple;
+$bgColor:rgb(132, 225, 241);
+
+h1{
+    color: $myColor;
+}
+
+body{
+    background-color: $bgColor;
+}
+
+p{
+    color:$myColor2;
+    font-size: 24px;
+    
+    
+}

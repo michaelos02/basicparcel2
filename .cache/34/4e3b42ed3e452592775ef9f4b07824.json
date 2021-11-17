@@ -1,0 +1,1 @@
+{"id":"fi2u","dependencies":[{"name":"/workspace/basicparcel2/package.json","includedInParent":true,"mtime":1637110774865}],"generated":{"css":"h1 {\n  color: red;\n}\n\nbody {\n  background-color: #84e1f1;\n}\n\np {\n  color: purple;\n  font-size: 24px;\n}","js":""},"sourceMaps":null,"error":null,"hash":"51ae462b0584e44394ebde675c01ad9b","cacheData":{"env":{}}}
